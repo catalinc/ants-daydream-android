@@ -16,6 +16,7 @@ class RenderThread extends Thread {
     private Grid mGrid;
 
     private Paint mBackgroundPaint;
+    private Paint mGridPaint;
     private Paint mActiveCellPaint;
     private Paint mAntPaint;
 
@@ -29,8 +30,12 @@ class RenderThread extends Thread {
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
 
+        // TODO simplify preferences
         mBackgroundPaint = new Paint();
         mBackgroundPaint.setColor(Color.parseColor(preferences.getString("background_color_preference", "#000000")));
+        mGridPaint = new Paint();
+        mGridPaint.setStyle(Paint.Style.STROKE);
+        mGridPaint.setColor(Color.YELLOW); // TODO set from preference
         mActiveCellPaint = new Paint();
         mActiveCellPaint.setColor(Color.parseColor(preferences.getString("active_cell_color_preference", "#FFFF00")));
         mAntPaint = new Paint();
@@ -67,6 +72,18 @@ class RenderThread extends Thread {
         int cellWidth = canvas.getWidth() / mGrid.getCols();
 
         canvas.drawPaint(mBackgroundPaint);
+
+        canvas.drawRect(0, 0, canvas.getWidth(), canvas.getHeight(), mGridPaint);
+
+        for (int r = 1; r < mGrid.getRows(); r++) {
+            int y = r * cellHeight;
+            canvas.drawLine(0, y, canvas.getWidth(), y, mGridPaint);
+        }
+
+        for (int c = 1; c < mGrid.getCols(); c++) {
+            int x = c * cellWidth;
+            canvas.drawLine(x, 0, x, canvas.getHeight(), mGridPaint);
+        }
 
         for (int r = 0; r < mGrid.getRows(); r++) {
             for (int c = 0; c < mGrid.getCols(); c++) {
