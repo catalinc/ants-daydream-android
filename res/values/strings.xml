@@ -2,16 +2,24 @@
 <resources>
     <string name="app_name">Langton\'s Ant</string>
     <string name="ants_dream_label">Langton\'s Ant</string>
+
     <string name="background_color_preference">Background</string>
-    <string name="summary_background_color_preference">Configure background color</string>
-    <string name="dialog_title_background_color_preference">Set the background color</string>
+    <string name="summary_background_color_preference">Change background color</string>
+    <string name="dialog_title_background_color_preference">Set background color</string>
     <string name="default_background_color">#000000</string>
-    <string name="active_cell_color_preference">Active Cell</string>
-    <string name="summary_active_cell_color_preference">Configure active cell color</string>
-    <string name="dialog_title_active_cell_color_preference">Set the active cell color</string>
-    <string name="default_active_cell_color">#FFFF00</string>
+
+    <string name="grid_color_preference">Grid</string>
+    <string name="summary_grid_color_preference">Configure grid color</string>
+    <string name="dialog_title_grid_color_preference">Set grid color</string>
+    <string name="default_grid_color">#00FF00</string>
+
+    <string name="cell_color_preference">Cell</string>
+    <string name="summary_cell_color_preference">Change cell color</string>
+    <string name="dialog_title_cell_color_preference">Set cell color</string>
+    <string name="default_cell_color">#FFFF00</string>
+
     <string name="ant_color_preference">Ant</string>
     <string name="summary_ant_color_preference">Configure ant color</string>
-    <string name="dialog_title_ant_color_preference">Set the ant color</string>
+    <string name="dialog_title_ant_color_preference">Set ant color</string>
     <string name="default_ant_color">#00FFFF</string>
 </resources>

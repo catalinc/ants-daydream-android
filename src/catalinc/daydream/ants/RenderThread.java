@@ -17,7 +17,7 @@ class RenderThread extends Thread {
 
     private Paint mBackgroundPaint;
     private Paint mGridPaint;
-    private Paint mActiveCellPaint;
+    private Paint mCellPaint;
     private Paint mAntPaint;
 
     private volatile boolean mRunning;
@@ -35,9 +35,9 @@ class RenderThread extends Thread {
         mBackgroundPaint.setColor(Color.parseColor(preferences.getString("background_color_preference", "#000000")));
         mGridPaint = new Paint();
         mGridPaint.setStyle(Paint.Style.STROKE);
-        mGridPaint.setColor(Color.YELLOW); // TODO set from preference
-        mActiveCellPaint = new Paint();
-        mActiveCellPaint.setColor(Color.parseColor(preferences.getString("active_cell_color_preference", "#FFFF00")));
+        mGridPaint.setColor(Color.parseColor(preferences.getString("grid_color_preference", "#00FF00")));
+        mCellPaint = new Paint();
+        mCellPaint.setColor(Color.parseColor(preferences.getString("cell_color_preference", "#FFFF00")));
         mAntPaint = new Paint();
         mAntPaint.setColor(Color.parseColor(preferences.getString("ant_color_preference", "#00FFFF")));
     }
@@ -88,7 +88,7 @@ class RenderThread extends Thread {
         for (int r = 0; r < mGrid.getRows(); r++) {
             for (int c = 0; c < mGrid.getCols(); c++) {
                 if (mGrid.getCell(r, c)) {
-                    drawCell(canvas, mActiveCellPaint, r, c, cellHeight, cellWidth);
+                    drawCell(canvas, mCellPaint, r, c, cellHeight, cellWidth);
                 }
             }
         }

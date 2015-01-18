@@ -10,7 +10,17 @@
         <item>#000080</item>
         <item>#000000</item>
     </string-array>
-    <string-array name="active_cell_item_list_preference">
+    <string-array name="grid_item_list_preference">
+        <item>Yellow</item>
+        <item>Aqua</item>
+        <item>Lime</item>
+    </string-array>
+    <string-array name="grid_item_values_list_preference">
+        <item>#FFFF00</item>
+        <item>#00FFFF</item>
+        <item>#00FF00</item>
+    </string-array>
+    <string-array name="cell_item_list_preference">
         <item>White</item>
         <item>Yellow</item>
         <item>Fuchsia</item>
@@ -21,7 +31,7 @@
         <item>Purple</item>
         <item>Green</item>
     </string-array>
-    <string-array name="active_cell_item_values_list_preference">
+    <string-array name="cell_item_values_list_preference">
         <item>#FFFFFF</item>
         <item>#FFFF00</item>
         <item>#FF00FF</item>
